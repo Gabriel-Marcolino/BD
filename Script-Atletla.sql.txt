@@ -1,0 +1,32 @@
+create database atleta;
+
+use atleta;
+
+create table atleta (
+    id_atleta int primary key,
+    nome varchar(40),
+    modalidade varchar(40),
+    qtdMedadalha int 
+    );
+insert into atleta values
+	(1, 'luidgi', 'tenis', 0),
+    (2, 'Claudio', 'Futebol', 2),
+    (3,'Vicente','Levantamento de peso',7),
+    (4,'Lucas','Xadrez',6),
+    (5,'Duó','Ginástica Artística',11),
+    (6,'Bonoro','Levantamento de peso',17);
+select * from atleta;
+select nome, qtdMedadalha from Atleta;
+select * from atleta where modalidade ='tenis';
+select * from atleta order by modalidade;
+select * from atleta order by qtdMedadalha desc;
+select * from atleta where nome like '%o%';
+select * from atleta where nome like 'B%';
+select * from atleta where nome like '%O';
+select * from atleta where nome like '%r_';
+update Atleta set qtdMedadalha = 4 where id_atleta = 1;
+select * from atleta;
+
+update Atleta set modalidade='Basket' where id_atleta=3; 
+delete from Atleta where id_atleta = 3;
+drop table Atleta;
